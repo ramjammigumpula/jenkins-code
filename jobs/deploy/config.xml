@@ -1,0 +1,35 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty plugin="gitlab-plugin@1.5.11">
+      <gitLabConnection></gitLabConnection>
+    </com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>## RED
+
+red=$( curl -s &apos;https://trends.google.com/trends/api/widgetdata/relatedsearches/csv?req=%7B%22restriction%22%3A%7B%22geo%22%3A%7B%22country%22%3A%22US%22%7D%2C%22time%22%3A%222019-03-24%202020-03-24%22%2C%22originalTimeRangeForExploreUrl%22%3A%22today%2012-m%22%2C%22complexKeywordsRestriction%22%3A%7B%22keyword%22%3A%5B%7B%22type%22%3A%22BROAD%22%2C%22value%22%3A%22red%22%7D%5D%7D%7D%2C%22keywordType%22%3A%22QUERY%22%2C%22metric%22%3A%5B%22TOP%22%2C%22RISING%22%5D%2C%22trendinessSettings%22%3A%7B%22compareTime%22%3A%222018-03-22%202019-03-23%22%7D%2C%22requestOptions%22%3A%7B%22property%22%3A%22%22%2C%22backend%22%3A%22IZG%22%2C%22category%22%3A0%7D%2C%22language%22%3A%22en%22%7D&amp;token=APP6_UEAAAAAXnsF3iQGujQ70YvkB3RHr3R6mxNwg3wi&amp;tz=-180&apos; -H &apos;authority: trends.google.com&apos; -H &apos;upgrade-insecure-requests: 1&apos; -H &apos;user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36&apos; -H &apos;sec-fetch-dest: document&apos; -H &apos;accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&apos; -H &apos;x-client-data: CIS2yQEIpbbJAQjBtskBCKmdygEIt6rKAQjLrsoBCNCvygEIvLDKAQiGtcoBCJe1ygEI7bXKAQiOusoBGLu6ygE=&apos; -H &apos;sec-fetch-site: same-origin&apos; -H &apos;sec-fetch-mode: navigate&apos; -H &apos;sec-fetch-user: ?1&apos; -H &apos;referer: https://trends.google.com/trends/explore?geo=US&amp;q=red,blue&apos; -H &apos;accept-language: en-US,en;q=0.9&apos; -H &apos;cookie: __utmc=10102256; __utma=10102256.2057731853.1584997719.1584997719.1585034421.2; __utmz=10102256.1585034421.2.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utmb=10102256.9.9.1585035362108; CONSENT=YES+SA.en+202001; ANID=AHWqTUlwN7EBl4EO4uXWFxB-tfBcMPAW7VSm4EOLqVPm0KcltwJEdhGKiezM_7kg; HSID=AujuHzrsQxlW1kfUd; SSID=Ay1adUv2C4gfziusS; APISID=g8GjrsAKaDVa_xW2/AIQMEjTIoZSIEo1uo; SAPISID=HtxPJgYD0h22Ab85/AZIYyElLVyJ6e2u7l; __Secure-HSID=AujuHzrsQxlW1kfUd; __Secure-SSID=Ay1adUv2C4gfziusS; __Secure-APISID=g8GjrsAKaDVa_xW2/AIQMEjTIoZSIEo1uo; __Secure-3PAPISID=HtxPJgYD0h22Ab85/AZIYyElLVyJ6e2u7l; SEARCH_SAMESITE=CgQIpo8B; SID=vAcvY45LQ6v7Rx01Su0gBphAF_dW-6HYdtxq6Nd4iTqdkb-psIOKzIEPAFt6ooW0QFiA8A.; __Secure-3PSID=vAcvY45LQ6v7Rx01Su0gBphAF_dW-6HYdtxq6Nd4iTqdkb-p96rIiRFt1Mas7rnG2RF_uQ.; NID=200=ZYvLIfSLYGcgaaVnaUxYSFtB2IrTXYoADgQiPudJPnzkrks7_L1ShirWHyd-qggji5zF2X0lgMmfG1c030nsOgEHRhWCwmBdqkD6CAwiS2NXUVNh-NttY7Ml9TOnkqlRw2RYDKJvYgHkiKZ-2kTbF3Qq0Ikc8EHhocmTIXGVRsWMGeD8eHcNRgfAxWFzzOqxXwvfqkwK-wW4IZiqzykhFtSrn_EyYy-Lm3Y6QF1zA8sDXjncJLFsOtogtUU_2lw3ERvlkCIgydyDo59JGTixWV1-0w4DSv8WS4Wh0lqwAsv4vnf4ilJCI5vEzG-BufLKP_wB2zZSgvob_vNK1CuaLBd1JohZ5rAA65S8OlwYd5WZmwq6xFY05nVarmy1d1v2ORlmFv0E0-ShRSuq0mEObPcXu-i5haeVCjYsi73PWz4; 1P_JAR=2020-03-24-07; SIDCC=AJi4QfHHJSO7faYi8XJx-X_CTM8VavkqG25pz7KeknuIdsr9NXp1AJa_WMcy7U0oByvzF9s-y68&apos; --compressed | awk -F &quot;,&quot; &apos;/TOP/,/RISING/{red+=$NF}END{print red}&apos; )
+
+
+ ##Blue
+
+blue=$(curl -s &apos;https://trends.google.com/trends/api/widgetdata/relatedsearches/csv?req=%7B%22restriction%22%3A%7B%22geo%22%3A%7B%22country%22%3A%22US%22%7D%2C%22time%22%3A%222019-03-24%202020-03-24%22%2C%22originalTimeRangeForExploreUrl%22%3A%22today%2012-m%22%2C%22complexKeywordsRestriction%22%3A%7B%22keyword%22%3A%5B%7B%22type%22%3A%22BROAD%22%2C%22value%22%3A%22blue%22%7D%5D%7D%7D%2C%22keywordType%22%3A%22QUERY%22%2C%22metric%22%3A%5B%22TOP%22%2C%22RISING%22%5D%2C%22trendinessSettings%22%3A%7B%22compareTime%22%3A%222018-03-22%202019-03-23%22%7D%2C%22requestOptions%22%3A%7B%22property%22%3A%22%22%2C%22backend%22%3A%22IZG%22%2C%22category%22%3A0%7D%2C%22language%22%3A%22en%22%7D&amp;token=APP6_UEAAAAAXnsF3kzkAy35NP-cKHxYktIY7eNWwUlL&amp;tz=-180&apos; -H &apos;authority: trends.google.com&apos; -H &apos;upgrade-insecure-requests: 1&apos; -H &apos;user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36&apos; -H &apos;sec-fetch-dest: document&apos; -H &apos;accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&apos; -H &apos;x-client-data: CIS2yQEIpbbJAQjBtskBCKmdygEIt6rKAQjLrsoBCNCvygEIvLDKAQiGtcoBCJe1ygEI7bXKAQiOusoBGLu6ygE=&apos; -H &apos;sec-fetch-site: same-origin&apos; -H &apos;sec-fetch-mode: navigate&apos; -H &apos;sec-fetch-user: ?1&apos; -H &apos;referer: https://trends.google.com/trends/explore?geo=US&amp;q=red,blue&apos; -H &apos;accept-language: en-US,en;q=0.9&apos; -H &apos;cookie: __utmc=10102256; __utma=10102256.2057731853.1584997719.1584997719.1585034421.2; __utmz=10102256.1585034421.2.2.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utmb=10102256.11.9.1585035905133; CONSENT=YES+SA.en+202001; ANID=AHWqTUlwN7EBl4EO4uXWFxB-tfBcMPAW7VSm4EOLqVPm0KcltwJEdhGKiezM_7kg; HSID=AujuHzrsQxlW1kfUd; SSID=Ay1adUv2C4gfziusS; APISID=g8GjrsAKaDVa_xW2/AIQMEjTIoZSIEo1uo; SAPISID=HtxPJgYD0h22Ab85/AZIYyElLVyJ6e2u7l; __Secure-HSID=AujuHzrsQxlW1kfUd; __Secure-SSID=Ay1adUv2C4gfziusS; __Secure-APISID=g8GjrsAKaDVa_xW2/AIQMEjTIoZSIEo1uo; __Secure-3PAPISID=HtxPJgYD0h22Ab85/AZIYyElLVyJ6e2u7l; SEARCH_SAMESITE=CgQIpo8B; SID=vAcvY45LQ6v7Rx01Su0gBphAF_dW-6HYdtxq6Nd4iTqdkb-psIOKzIEPAFt6ooW0QFiA8A.; __Secure-3PSID=vAcvY45LQ6v7Rx01Su0gBphAF_dW-6HYdtxq6Nd4iTqdkb-p96rIiRFt1Mas7rnG2RF_uQ.; NID=200=ZYvLIfSLYGcgaaVnaUxYSFtB2IrTXYoADgQiPudJPnzkrks7_L1ShirWHyd-qggji5zF2X0lgMmfG1c030nsOgEHRhWCwmBdqkD6CAwiS2NXUVNh-NttY7Ml9TOnkqlRw2RYDKJvYgHkiKZ-2kTbF3Qq0Ikc8EHhocmTIXGVRsWMGeD8eHcNRgfAxWFzzOqxXwvfqkwK-wW4IZiqzykhFtSrn_EyYy-Lm3Y6QF1zA8sDXjncJLFsOtogtUU_2lw3ERvlkCIgydyDo59JGTixWV1-0w4DSv8WS4Wh0lqwAsv4vnf4ilJCI5vEzG-BufLKP_wB2zZSgvob_vNK1CuaLBd1JohZ5rAA65S8OlwYd5WZmwq6xFY05nVarmy1d1v2ORlmFv0E0-ShRSuq0mEObPcXu-i5haeVCjYsi73PWz4; 1P_JAR=2020-03-24-07; SIDCC=AJi4QfF28_A_24DhtX2lIhAUEFLdpAvGnwMYYs_uY4NX-E-03k4qGrrOJF8AOqgk6OAYHHGimx4&apos; --compressed   | awk -F &quot;,&quot; &apos;/TOP/,/RISING/{blue+=$NF}END{print blue}&apos;)
+echo RED,BLUE
+echo $red,$blue
+</command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
