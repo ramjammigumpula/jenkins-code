@@ -37,7 +37,12 @@
 
 python trend.py
 
-cp -rvf file1.csv  file2.csv /share</command>
+cp -rvf file1.csv  file2.csv /share
+
+ip=$(curl -s ifconfig.me)
+
+echo -e &quot;Please find the log in the below URL\n
+      http://${ip}\n&quot;</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
