@@ -20,8 +20,14 @@ Checking out Revision 512647f616805274f8b4495f5e9cce2de99e908e (refs/remotes/ori
  > git config core.sparsecheckout # timeout=10
  > git checkout -f 512647f616805274f8b4495f5e9cce2de99e908e # timeout=10
 Commit message: "uploads"
- > git rev-list --no-walk 7d19def889b801a2970ce17684672b151883880c # timeout=10
-[deploy] $ /bin/sh -xe /tmp/jenkins8640621360884809453.sh
+ > git rev-list --no-walk 512647f616805274f8b4495f5e9cce2de99e908e # timeout=10
+[deploy] $ /bin/sh -xe /tmp/jenkins3347687360388859185.sh
 + cd build
 + python trend.py
-Finished: SUCCESS
++ cp -rvf file1.csv file2.csv /share/apache
+'file1.csv' -> '/share/apache/file1.csv'
+cp: cannot create regular file '/share/apache/file1.csv': Permission denied
+'file2.csv' -> '/share/apache/file2.csv'
+cp: cannot create regular file '/share/apache/file2.csv': Permission denied
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
