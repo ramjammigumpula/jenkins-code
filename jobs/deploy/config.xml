@@ -37,7 +37,7 @@
 
 python trend.py
 
-cp -rvf file1.csv  file2.csv /share/apache</command>
+cp -rvf file1.csv  file2.csv /share</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
