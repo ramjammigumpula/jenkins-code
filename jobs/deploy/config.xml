@@ -35,7 +35,9 @@
     <hudson.tasks.Shell>
       <command>cd build
 
-python trend.py</command>
+python trend.py
+
+cp -rvf file1.csv  file2.csv /share/apache</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>

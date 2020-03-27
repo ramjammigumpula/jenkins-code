@@ -6,12 +6,12 @@
   <usages>
     <entry>
       <string>deploy</string>
-      <ranges>2</ranges>
+      <ranges>2-3</ranges>
     </entry>
   </usages>
   <facets>
     <com.cloudbees.plugins.credentials.fingerprints.NodeCredentialsFingerprintFacet plugin="credentials@2.3.5">
-      <timestamp>1585316197089</timestamp>
+      <timestamp>1585317560702</timestamp>
       <nodeName>python</nodeName>
       <timestamp0>1585316197089</timestamp0>
     </com.cloudbees.plugins.credentials.fingerprints.NodeCredentialsFingerprintFacet>
