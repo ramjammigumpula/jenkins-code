@@ -8,7 +8,23 @@
       <gitLabConnection></gitLabConnection>
     </com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty>
   </properties>
-  <scm class="hudson.scm.NullSCM"/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@4.2.2">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/ramjammigumpula/jenkins.git</url>
+        <credentialsId>559c9308-7438-4557-8155-1b590b6c1f49</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
@@ -17,17 +33,9 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>## RED
+      <command>cd build
 
-red=$(  curl -s &apos;https://trends.google.com/trends/api/widgetdata/relatedsearches/csv?req=%7B%22restriction%22%3A%7B%22geo%22%3A%7B%22country%22%3A%22US%22%7D%2C%22time%22%3A%222019-03-25%202020-03-25%22%2C%22originalTimeRangeForExploreUrl%22%3A%22today%2012-m%22%2C%22complexKeywordsRestriction%22%3A%7B%22keyword%22%3A%5B%7B%22type%22%3A%22BROAD%22%2C%22value%22%3A%22red%22%7D%5D%7D%7D%2C%22keywordType%22%3A%22QUERY%22%2C%22metric%22%3A%5B%22TOP%22%2C%22RISING%22%5D%2C%22trendinessSettings%22%3A%7B%22compareTime%22%3A%222018-03-23%202019-03-24%22%7D%2C%22requestOptions%22%3A%7B%22property%22%3A%22%22%2C%22backend%22%3A%22IZG%22%2C%22category%22%3A0%7D%2C%22language%22%3A%22en%22%7D&amp;token=APP6_UEAAAAAXn0Y81LsWzDW-xU85ZIm0AY1lroFWFpC&amp;tz=-180&apos; -H &apos;authority: trends.google.com&apos; -H &apos;upgrade-insecure-requests: 1&apos; -H &apos;user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36&apos; -H &apos;sec-fetch-dest: document&apos; -H &apos;accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&apos; -H &apos;sec-fetch-site: same-origin&apos; -H &apos;sec-fetch-mode: navigate&apos; -H &apos;sec-fetch-user: ?1&apos; -H &apos;referer: https://trends.google.com/trends/explore?q=red&amp;geo=US&apos; -H &apos;accept-language: en-US,en;q=0.9&apos; -H &apos;cookie: __utmc=10102256; __utma=10102256.862716627.1585170395.1585170395.1585170395.1; __utmz=10102256.1585170395.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utmt=1; __utmb=10102256.4.9.1585170397213; ANID=AHWqTUlYi8wTKUV_wwxgdgxMQ8M6-wL8RlvTQ0CVMFEIwge26UF55TvononQU4I8; NID=200=GqpTrkoYwpKxaVmub3lyxKxM5bAVQEUT-ccf0aBbwuKDbVBUAj7r2hywfj8LrKu1UaX-xwh0ACSis2KcSSIjGRRHFmQjIzawxbFzXLO6g367LgOpvm6xAxriIveKZMz5JrciVR-xt-Ceu-ilYAK-jY_coVfDK604OX5lYjPMIdrlh7Clrrkk_HraShRKtMnPzLG1h0vW8Yf3GPY; OGPC=19016257-2:; 1P_JAR=2020-3-25-21&apos; --compressed | awk -F &quot;,&quot; &apos;/TOP/,/RISING/{red+=$NF}END{print red}&apos; )
-
-
- ##Blue
-
-blue=$(curl &apos;https://trends.google.com/trends/api/widgetdata/comparedgeo/csv?req=%7B%22geo%22%3A%7B%22country%22%3A%22US%22%7D%2C%22comparisonItem%22%3A%5B%7B%22time%22%3A%222019-03-25%202020-03-25%22%2C%22complexKeywordsRestriction%22%3A%7B%22keyword%22%3A%5B%7B%22type%22%3A%22BROAD%22%2C%22value%22%3A%22blue%22%7D%5D%7D%7D%5D%2C%22resolution%22%3A%22REGION%22%2C%22locale%22%3A%22en-US%22%2C%22requestOptions%22%3A%7B%22property%22%3A%22%22%2C%22backend%22%3A%22IZG%22%2C%22category%22%3A0%7D%7D&amp;token=APP6_UEAAAAAXn0ZUBCwH8-0ktmtvbvl2fy2Rn8t7fLM&amp;tz=-180&apos; -H &apos;authority: trends.google.com&apos; -H &apos;upgrade-insecure-requests: 1&apos; -H &apos;user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36&apos; -H &apos;sec-fetch-dest: document&apos; -H &apos;accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9&apos; -H &apos;sec-fetch-site: same-origin&apos; -H &apos;sec-fetch-mode: navigate&apos; -H &apos;sec-fetch-user: ?1&apos; -H &apos;referer: https://trends.google.com/trends/explore?q=blue&amp;geo=US&apos; -H &apos;accept-language: en-US,en;q=0.9&apos; -H &apos;cookie: __utma=10102256.862716627.1585170395.1585170395.1585170395.1; __utmc=10102256; __utmz=10102256.1585170395.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); __utmt=1; __utmb=10102256.9.9.1585170490562; ANID=AHWqTUlYi8wTKUV_wwxgdgxMQ8M6-wL8RlvTQ0CVMFEIwge26UF55TvononQU4I8; NID=200=GqpTrkoYwpKxaVmub3lyxKxM5bAVQEUT-ccf0aBbwuKDbVBUAj7r2hywfj8LrKu1UaX-xwh0ACSis2KcSSIjGRRHFmQjIzawxbFzXLO6g367LgOpvm6xAxriIveKZMz5JrciVR-xt-Ceu-ilYAK-jY_coVfDK604OX5lYjPMIdrlh7Clrrkk_HraShRKtMnPzLG1h0vW8Yf3GPY; OGPC=19016257-2:; 1P_JAR=2020-3-25-21&apos; --compressed   | awk -F &quot;,&quot; &apos;/TOP/,/RISING/{blue+=$NF}END{print blue}&apos;)
-echo RED,BLUE
-echo $red,$blue
-</command>
+python trend.py</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers/>
